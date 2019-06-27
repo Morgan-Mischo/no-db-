@@ -18,16 +18,16 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
-    axios
-    .get('/api/tasks')
-    .then(res => {
-      this.setState({ tasks: res.data }); 
-    })
-    .catch(err => {
-      console.log('err from server', err); 
-    }); 
-  }; 
+  // componentDidMount() {
+  //   axios
+  //   .get('/api/tasks')
+  //   .then(res => {
+  //     this.setState({ tasks: res.data }); 
+  //   })
+  //   .catch(err => {
+  //     console.log('err from server', err); 
+  //   }); 
+  // }; 
 
   editTask = (id) => {
     axios
@@ -47,16 +47,15 @@ class App extends Component {
     .then(res => {
       this.setState({ tasks: res.data }); 
     })
-    .then(res => {
-      this.setState({ toggleModal: true}); 
-    })
+
     .catch(err => {
       console.log('err from server', err)
     }); 
   }; 
 
- 
+  toggleModal = () => this.setState({ toggleModal : true }); 
 
+  toggleModalBack = () => this.setState({ toggleModal : false }); 
 
   render() {
 
@@ -69,11 +68,11 @@ class App extends Component {
         <div className="finished">
         </div>
         <div className="add">
-          <button onClick={this.addTask}>Add</button>
+          <button onClick={this.toggleModal}>Add</button>
         </div>
         {
           this.state.toggleModal ? (
-          <Form />
+          <Form toggleModalBack={this.toggleModalBack}/>
           ) : null
 
         }
