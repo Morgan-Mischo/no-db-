@@ -5,7 +5,8 @@ class Form extends Component {
     super();
     this.state = {
       title: "",
-      comments: ""
+      comments: "", 
+      recur: []
     };
   }
 
@@ -17,23 +18,24 @@ class Form extends Component {
     });
   }
 
+  
+
   render() {
       console.log(this.props)
     return (
-      <div>
-        <button onClick={this.props.toggleModalBack}>X</button>
+      <div className="modal" >
         <div className="task">
-          Task: <input type="text" />
+          Task: <input type="text" value={this.title} onChange={this.props.updateTask} />
         </div>
         <div className="comments">
-          Comments: <input type="comments" />
+          Comments: <input type="text" />
         </div>
-        <div className="recurrence"> Recurrence: 
-        <form>
-        <input type="radio" name="recur" value="yes"/> Recurring
+        {/* <div className="recurrence"> Recurrence:  */}
+        {/* <form> */}
+        {/* <input type="radio" name="recur" value="yes"/> Recurring
             <input type="radio" name="recur" value="no"/> Non-Recurring
             </form>
-        </div>
+        </div> */}
         <div className="time"> Time: 
         <form>
             <input type="radio" name="time" value="morning"/> Morning
@@ -41,6 +43,8 @@ class Form extends Component {
             <input type="radio" name="time" value="evening"/> Evening
         </form>
         </div>
+        <button className="submitButton" onClick={this.handleSubmit}>Submit</button>
+        <button className="xButton" onClick={this.props.toggleModalBack}>X</button>
       </div>
     );
   }

@@ -31,5 +31,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy":"http://localhost:4200",
+  "main": "./server/server.js"
+
 }

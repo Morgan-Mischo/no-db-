@@ -1,33 +1,134 @@
+
 .App {
-  text-align: center;
+  background-color: rgb(212, 210, 223); 
+  width: 100vw;
+  height: 100vh; 
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  width: 100vw; 
+  height: 15vh; 
+  align-content: space-between; 
+  align-items: center; 
+  display: flex; 
+  flex-direction: row; 
+  background-color: rgb(118, 115, 126);
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.tasksButton {
+  background-color: rgb(118, 115, 126); 
+  border: 2px solid rgb(118, 115, 126); 
+  color: white; 
+  border-radius: 12px; 
+  margin-left: 10vmax; 
+  margin-right: 10vmax;
+  font-size: 20px; 
 }
 
-.App-link {
-  color: #61dafb;
+.tasksButton:hover{
+  background-color: white; 
+  color: black; 
+  border: 2px solid black; 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.finishedButton {
+  background-color: rgb(118, 115, 126); 
+  border: 2px solid rgb(118, 115, 126); 
+  color: white; 
+  border-radius: 12px; 
+  margin-left: 10vmax; 
+  margin-right: 10vmax;
+  font-size: 20px; 
 }
+
+.finishedButton:hover{
+  background-color: white; 
+  color: black; 
+  border: 2px solid black; 
+}
+
+.addButton {
+  background-color: rgb(118, 115, 126); 
+  border: 2px solid rgb(118, 115, 126); 
+  color: white; 
+  border-radius: 12px; 
+  margin-left: 10vmax; 
+  margin-right: 10vmax;
+  font-size: 20px; 
+}
+
+.addButton:hover{
+  background-color: white; 
+  color: black; 
+  border: 2px solid black; 
+}
+
+.newDayButton {
+  background-color: rgb(118, 115, 126); 
+  border: 2px solid rgb(118, 115, 126); 
+  color: white; 
+  border-radius: 12px; 
+  margin-left: 10vmax; 
+  margin-right: 710max;
+  font-size: 20px; 
+}
+
+.newDayButton:hover{
+  background-color: white; 
+  color: black; 
+  border: 2px solid black; 
+}
+
+.tasksHeader {
+  font-size: 30px; 
+  margin-top: 2vh; 
+  margin-bottom: 2vh; 
+  font-weight: bold; 
+  margin-left: 45%; 
+}
+
+
+
+.morning {
+  font-size: 20px; 
+  margin-bottom: 23vh; 
+}
+
+.afternoon {
+  font-size: 20px; 
+  margin-bottom: 24vh;
+  border-top: 2px solid black; 
+}
+
+.evening {
+  font-size: 20px; 
+  border-top: 2px solid black; 
+}
+
+.modal {
+ position: absolute; 
+ top: 16vh; 
+ left: 60vw; 
+}
+
+.xButton {
+  margin-top: 5px; 
+  background-color: white; 
+  border: 2px solid black; 
+  color: black; 
+  border-radius: 12px; 
+  margin-left: 7vmax; 
+  font-size: 16px; 
+}
+
+.submitButton {
+  background-color: white; 
+  border: 2px solid black; 
+  color: black;  
+  border-radius: 12px; 
+  margin-left: 2vmax; 
+  font-size: 16px; 
+}
+
