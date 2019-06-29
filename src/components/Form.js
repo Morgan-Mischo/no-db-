@@ -1,54 +1,42 @@
 import React, { Component } from "react";
 
 class Form extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       title: "",
-      comments: "", 
-      recur: []
+      // comments: "",
+      // time: ""
     };
+    this.handleTitle = this.handleTitle.bind(this); 
+    this.handleSubmit = this.handleSubmit.bind(this); 
+
   }
 
-  handleSubmit() {
-    this.props.addTask(this.state);
+  handleTitle(e){
     this.setState({
-      title: "",
-      comments: ""
-    });
+      title : e.target.value
+    }); 
   }
 
-  
+  handleSubmit(e) {
+    alert('A title was submitted: ' + this.state.title); 
+    e.preventDefault(); 
+  }
 
   render() {
-      console.log(this.props)
     return (
-      <div className="modal" >
-        <div className="task">
-          Task: <input type="text" value={this.title} onChange={this.props.updateTask} />
-        </div>
-        <div className="comments">
-          Comments: <input type="text" />
-        </div>
-        {/* <div className="recurrence"> Recurrence:  */}
-        {/* <form> */}
-        {/* <input type="radio" name="recur" value="yes"/> Recurring
-            <input type="radio" name="recur" value="no"/> Non-Recurring
-            </form>
-        </div> */}
-        <div className="time"> Time: 
-        <form>
-            <input type="radio" name="time" value="morning"/> Morning
-            <input type="radio" name="time" value="afternoon"/> Afternoon
-            <input type="radio" name="time" value="evening"/> Evening
-        </form>
-        </div>
-        <button className="submitButton" onClick={this.handleSubmit}>Submit</button>
-        <button className="xButton" onClick={this.props.toggleModalBack}>X</button>
+      <div className="modal">
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Title:
+          <input type="text" value={this.state.title} onChange={this.handleTitle}/>
+        </label>
+        <input type="submit" value="Submit"/>
+      </form>
       </div>
-    );
+    )
   }
 }
-//pass down as a prop
 
 export default Form;
