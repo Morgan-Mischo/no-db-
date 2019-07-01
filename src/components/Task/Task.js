@@ -2,27 +2,26 @@ import React from "react";
 import "./Task.css"; 
 
 export default function Task(props) {
-    const{ title, comments, id } = props.task; 
+    const{ title, comments, id, completed } = props.task; 
+
+    console.log("my props", props)
     return (
         <div className="task">
+             <input type="checkbox" name="checkbox" value="checked" onClick={() => props.updateTask(id, props.task, !completed)}></input>
             <div className="task-details">
                 <p>{title}</p>
-                <p>Comments: ${comments}</p>
+                <p>Comments: {comments}</p>
             </div>
 
             <div className="task-btns">
                 <button
-                style={{ background: "orange" }}
                 onClick={() => props.setEditing(id)}
-                >
-                    <i className="far fa-edit"/>
+                > Edit
                 </button>
 
                 <button 
-                style={{ background: "red" }}
                 onClick={() => props.deleteTask(id)}
-                >
-                    <i className="fas fa-times"/>>
+                > Delete
                 </button>
             </div>
         </div>

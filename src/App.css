@@ -1,7 +1,5 @@
 .container {
-  width: 100vw; 
-  height: 80vh; 
-  display: flex; 
-  justify-content: space-around; 
-  align-items: center; 
-}
+    background-color: rgb(212, 210, 223); 
+    width: 100vw;
+    height: 100vh; 
+  }

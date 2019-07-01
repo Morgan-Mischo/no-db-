@@ -1,0 +1,13 @@
+.morning {
+    font-size: 20px; 
+  }
+  
+  .afternoon {
+    font-size: 20px; 
+    border-top: 2px solid black; 
+  }
+  
+  .evening {
+    font-size: 20px; 
+    border-top: 2px solid black; 
+  }

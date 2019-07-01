@@ -1,6 +1,6 @@
 require('dotenv').config({path: __dirname + '/../.env'}); 
 const express = require('express'); 
-const ctrl = require("./controllers/task_controller"); 
+const ctrl = require("./controllers/task_contoller"); 
 const {SERVER_PORT} = process.env; 
 
 const app = express(); 
@@ -9,9 +9,9 @@ app.use(express.json());
 
 app.get("/api/tasks", ctrl.getTasks); 
 
-app.post("/api/task", ctrl.addTask); 
+app.post("/api/tasks", ctrl.createTask); 
 
-app.delete("/api/task/:id", ctrl.updateTask); 
+app.delete("/api/task/:id", ctrl.deleteTask); 
 
 app.put("/api/task/:id", ctrl.updateTask); 
 

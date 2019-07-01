@@ -20,11 +20,6 @@
     font-size: 18px;
   }
   
-  .task-details img {
-    width: 40px;
-    height: 40px;
-    margin-top: 5px;
-  }
   
   .task-btns {
     width: 30%;
@@ -33,7 +28,8 @@
   }
   
   .task-btns button {
-    width: 40px;
+    width: 100px;
+    height: 40px; 
     margin-left: 10px;
     font-size: 18px;
     padding: 5px;

@@ -17,11 +17,11 @@ let tasks = [
 
 module.exports = {
     getTasks: (req, res) => {
-        console.log("hit getTask"); 
+        console.log(tasks); 
         res.status(200).send(tasks); 
     }, 
 
-    addTask: (req, res) => {
+    createTask: (req, res) => {
         console.log("hit addTask"); 
         let { id } = req.params; 
         let { title, comments, time, completed } = req.body; 
@@ -34,13 +34,13 @@ module.exports = {
             completed
         }; 
 
-        id++; 
         tasks.push(newTask); 
+        id++; 
         res.status(200).send(tasks); 
     }, 
 
     deleteTask: (req, res) => {
-        console.log("hit deleteTask"); 
+        console.log("hit deleteTask", req.params); 
         const { id } = req.params; 
 
         let index = tasks.findIndex(task => task.id === +id); 
@@ -51,19 +51,37 @@ module.exports = {
     }, 
 
     updateTask: (req, res) => {
-        console.log("hit updateTask"); 
+        console.log("hit update", req.body); 
         const { id } = req.params; 
-        let { title, comments, time, completed } = req.body; 
+        let { completedStatus } = req.body; 
+        let { title, comments, time, completed} = req.body.task
+
+        let updatedTask = {}
+        if(completed !== completedStatus) {
+            console.log('hit if')
+            updatedTask = {
+                id, 
+                title, 
+                comments, 
+                time, 
+                completed: completedStatus
+            };  
+        } else {
+            console.log('hit else')
+            updatedTask = {
+                id, 
+                title, 
+                comments, 
+                time, 
+                completed
+            };  
+        }
+
+        console.log(completedStatus ,updatedTask)
 
         let index = tasks.findIndex(task => task.id === +id); 
 
-        let updatedTask = {
-            id, 
-            title, 
-            comments, 
-            time, 
-            completed
-        };  
+  
 
         tasks[index] = { ...tasks[index], ...updatedTask }; 
         res.status(200).send(tasks); 

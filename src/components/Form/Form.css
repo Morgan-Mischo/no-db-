@@ -1,32 +1,38 @@
 .form-container {
-    width: 400px;
-    height: 400px;
-    padding: 20px;
+    width: 100px;
+    height: 100px;
     border: 1px solid rgba(194, 194, 194, 0.3);
     background: rgb(31, 31, 31);
-    box-shadow: 0px 0px 20px rgba(89, 189, 89, 0.3);
   }
   
   .form {
-    height: 400px;
+    height: 100px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
-  
-  .form h1 {
-    color: rgb(172, 172, 172);
-    text-transform: uppercase;
+      position: absolute; 
+      top: 7vh; 
+      left: 55vw; 
   }
   
   .form input {
     width: 80%;
     padding: 10px;
     margin-bottom: 20px;
-    background: gray;
+    background: black;
     color: white;
-    font-size: 16px;
+    font-size: 12px;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .radio {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: black;
+    color: white;
+    font-size: 12px;
     border-radius: 5px;
     border: none;
   }
@@ -36,18 +42,16 @@
   }
   
   .form button {
-    width: 85%;
-    padding: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
+    width: 60%; 
+    font-size: 12px;
     color: white;
-    background: rgba(89, 189, 89);
+    background: black;
     border: none;
     border-radius: 5px;
   }
   
   .form button:hover {
     cursor: pointer;
-    background: rgb(55, 136, 55);
+    background: white; 
+    color: black; 
   }
